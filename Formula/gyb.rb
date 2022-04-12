@@ -5,18 +5,18 @@
 class Gyb < Formula
   desc "\"Generate Your Boilerplate\""
   homepage "https://nshipster.com/swift-gyb/"
-  url "https://raw.githubusercontent.com/apple/swift/17e5594bec7cebe980857e4fe3e05837708f9f62/utils/gyb"
-  version "2019-01-18"
-  sha256 "0a97b3ac257fa29d6240d1878590facd1d80053491cc14601f7e68bb182a29b1"
+  url "https://raw.githubusercontent.com/apple/swift/fdae97aaad7b3ec7f03ed8e544a00b19de2cc93b/utils/gyb"
+  version "2022-04-12"
+  sha256 "5647355be7d91007cc4c849da79bea235a7d7f97871384f0d12f639402d53190"
 
   depends_on xcode: ["10.0", :build]
 
   resource "gyb.py" do
-    url "https://raw.githubusercontent.com/apple/swift/dab60f04ca98c573378a5e78ed85d5a27a7ca2e0/utils/gyb.py"
-    sha256 "4693b65a8ea54173e20f2565a105af62d57d0e6f66540ea096e7caee737630f7"
-    version "2019-01-18"
+    url "https://raw.githubusercontent.com/apple/swift/fdae97aaad7b3ec7f03ed8e544a00b19de2cc93b/utils/gyb.py"
+    sha256 "f3a74dc844f99c5e74e520a829f1c962e7d4eb802de845fb5b38f800f5612b9f"
+    version "2022-04-12"
   end
-  depends_on "python@2" if MacOS.version <= :snow_leopard
+  depends_on "python@3" if MacOS.version <= :snow_leopard
 
   def install
     resource("gyb.py").stage { bin.install "gyb.py" }
